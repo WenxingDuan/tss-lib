@@ -63,8 +63,7 @@ keygenLoop:
 			}
 		}
 	}
-	// pIDs is already sorted by GenerateTestPartyIDs
-	return keys, pIDs, nil
+return keys, tss.SortPartyIDs(pIDs), nil
 }
 
 func runSigning(keys []keygen.LocalPartySaveData, pIDs tss.SortedPartyIDs, msg []byte, threshold int) (*common.SignatureData, error) {
